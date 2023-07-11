@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>Mon Application Vue.js</title>
+</head>
+<body>
+<div id="app">
+<h1 class="primary">Contact des prix d'aliment</h1>
+<ul>
+    <li>Prix Bananes: {{ prixBanane }} CFA</li>
+    <li>Prix Pommes: {{ prixPommes }} CFA</li>
+    <li>Prix Noix de Coco: {{ prixNoixDuCoco }} CFA</li>
+    <li>Prix Poire: {{ prixPoire }} CFA</li>
+    <li>Prix Clementine: {{ prixClementine }} CFA</li>
+</ul>
+<p> Total: {{prixBanane + prixPommes + prixNoixDuCoco + prixPoire + prixClementine}} CFA</p>
+<p> Total: {{ totalMontant }} CFA</p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+                data:{
+                    prixBanane: 1000,
+                    prixPommes: 600,
+                    prixNoixDuCoco: 800,
+                    prixPoire: 900,
+                    prixClementine: 1200
+                },
+                computed: {
+                    totalMontant(){
+                        return this.prixBanane + this.prixPommes + this.prixNoixDuCoco + this.prixPoire + this.prixClementine
+                    }
+                }
+    })
+</script>
+</body>
+</html>

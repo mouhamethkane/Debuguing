@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>Mon Application Vue.js</title>
+</head>
+<body>
+<div id="app">
+<h1>Liste notes des eleves</h1>
+<ul>
+    <li v-for="notes in notesClasse">
+        {{ notes.name_Eleve }} : {{ notes.note}}
+    </li>
+</ul>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+                data:{
+                 notesClasse: [
+                    { name_Eleve: 'Mouhameth Kane', note: 16},
+                    { name_Eleve: 'Assane Kane', note: 20},
+                    { name_Eleve: 'Moussa Kane', note: 17},
+                    { name_Eleve: 'Modou Kane', note: 18},
+                    { name_Eleve: 'Fatou Kane', note: 19},
+                 ]
+                }
+    })
+</script>
+</body>
+</html>
